@@ -17,6 +17,7 @@ class InventoryPage extends Page {
      * @returns {Promise<WebdriverIO.Element>} Элемент кнопки добавления в корзину.
      */
     async getAddToCartButton(itemName) {
+        console.log(`Getting 'Add to cart' button for item: ${itemName}`);
         for (const item of await this.inventoryItems) {
             const nameElement = await item.$('.inventory_item_name');
             const text = await nameElement.getText();
@@ -33,6 +34,7 @@ class InventoryPage extends Page {
      * @returns {Promise<void>}
      */
     async addItemsToCart(itemNames) {
+        console.log(`Adding items to cart: ${itemNames.join(', ')}`);
         for (const itemName of itemNames) {
             const button = await this.getAddToCartButton(itemName);
             await button.click();
@@ -44,6 +46,7 @@ class InventoryPage extends Page {
      * @returns {Promise<void>}
      */
     async goToCart() {
+        console.log('Navigating to cart...');
         await this.shoppingCartLink.click();
     }
 }

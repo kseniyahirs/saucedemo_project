@@ -26,6 +26,7 @@ class LoginPage extends Page {
      * @param {string} password - Пароль.
      */
     async login (username, password) {
+        console.log(`Logging in with username: ${username}`);
         await this.inputUsername.setValue(username);
         await this.inputPassword.setValue(password);
         await this.btnSubmit.click();
@@ -35,6 +36,7 @@ class LoginPage extends Page {
      * Открывает страницу входа.
      */
     open () {
+        console.log('Opening login page...');
         return super.open('');
     }
 }
