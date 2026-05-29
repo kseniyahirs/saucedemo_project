@@ -14,7 +14,7 @@ class InventoryPage extends Page {
     /**
      * Находит кнопку "Add to cart" для конкретного товара по его названию.
      * @param {string} itemName - Название товара.
-     * @returns {Promise<WebdriverIO.Element>} - Элемент кнопки.
+     * @returns {Promise<WebdriverIO.Element>} Элемент кнопки добавления в корзину.
      */
     async getAddToCartButton(itemName) {
         for (const item of await this.inventoryItems) {
@@ -30,6 +30,7 @@ class InventoryPage extends Page {
     /**
      * Добавляет в корзину несколько товаров по их названиям.
      * @param {string[]} itemNames - Массив с названиями товаров.
+     * @returns {Promise<void>}
      */
     async addItemsToCart(itemNames) {
         for (const itemName of itemNames) {
@@ -39,7 +40,8 @@ class InventoryPage extends Page {
     }
 
     /**
-     * Переходит на страницу корзины.
+     * Выполняет клик по иконке корзины для перехода на страницу корзины.
+     * @returns {Promise<void>}
      */
     async goToCart() {
         await this.shoppingCartLink.click();

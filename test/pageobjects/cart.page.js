@@ -8,7 +8,7 @@ class CartPage extends Page {
 
     /**
      * Получает названия всех товаров, добавленных в корзину.
-     * @returns {Promise<string[]>} - Массив с названиями товаров.
+     * @returns {Promise<string[]>} Массив с названиями товаров в корзине.
      */
     async getCartItemNames() {
         const names = [];

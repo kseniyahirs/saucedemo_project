@@ -19,9 +19,11 @@ class LoginPage extends Page {
         return $('#login-button');
     }
 
+
     /**
-     * a method to encapsule automation code to interact with the page
-     * e.g. to login using username and password
+     * Авторизует пользователя на сайте.
+     * @param {string} username - Имя пользователя.
+     * @param {string} password - Пароль.
      */
     async login (username, password) {
         await this.inputUsername.setValue(username);
@@ -30,7 +32,7 @@ class LoginPage extends Page {
     }
 
     /**
-     * overwrite specific options to adapt it to page object
+     * Открывает страницу входа.
      */
     open () {
         return super.open('');
