@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "SauceDemo test automation with WebdriverIO",
   "private": true,
+  "type": "module",
   "scripts": {
     "test": "wdio run ./wdio.conf.js",
     "allure": "allure generate allure-results --clean && allure open"
